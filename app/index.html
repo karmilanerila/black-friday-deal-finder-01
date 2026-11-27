@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound — Real Black Friday Deals, Checked Today</title>
+<meta name="description" content="A Black Friday deal finder with real prices checked 27 Nov 2026 at Amazon, Best Buy, Walmart, Target and Dell. Every deal shows its store, sale price, usual price, discount and an honest verdict.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="paw" aria-hidden="true">&#128054;</span>
+      <div>
+        <h1>DealHound</h1>
+        <p class="tagline">Sniffing out real Black Friday deals — no inflated “was” prices, no guesses.</p>
+      </div>
+    </div>
+    <div class="checked-badge">
+      <span class="checked-dot" aria-hidden="true"></span>
+      <span>All prices checked <strong>27 Nov 2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Black Friday, checked deal by deal.</h2>
+    <p class="hero-sub">Every price below was read today at the store or in a deals roundup that names the store. Each card tells you whether it is really a deal — a new low, a strong cut, or just a routine sale — and why.</p>
+    <p class="stats" id="stats" aria-live="polite"></p>
+  </section>
+
+  <section class="controls" aria-label="Find deals">
+    <label class="control search-control">
+      <span class="control-label">Search</span>
+      <input id="search" type="search" placeholder="Try “AirPods”, “OLED TV”, “vacuum”… " autocomplete="off">
+    </label>
+    <label class="control">
+      <span class="control-label">Category</span>
+      <select id="category"></select>
+    </label>
+    <label class="control">
+      <span class="control-label">Store</span>
+      <select id="store"></select>
+    </label>
+    <label class="control">
+      <span class="control-label">Min. discount</span>
+      <select id="mindiscount">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="30">30% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </label>
+    <label class="control">
+      <span class="control-label">Sort by</span>
+      <select id="sort">
+        <option value="best">Best deals first</option>
+        <option value="discount">Biggest % off</option>
+        <option value="saving">Biggest $ saving</option>
+        <option value="price-low">Lowest price</option>
+        <option value="price-high">Highest price</option>
+      </select>
+    </label>
+  </section>
+
+  <p class="result-line" id="result-line" aria-live="polite"></p>
+
+  <section class="compare" id="compare" aria-label="Same product, compared across stores">
+    <h2>Same product, compared across stores</h2>
+    <p class="section-sub">A few products are on sale at more than one store. Here is the honest head-to-head — the cheapest price wins, the rest are shown so you can see the gap.</p>
+    <div class="compare-grid" id="compare-grid"></div>
+  </section>
+
+  <section id="deals" aria-label="Deals">
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No deals match those filters. Try clearing the search or lowering the minimum discount.</p>
+  </section>
+
+  <section class="howto" aria-label="How the prices were checked">
+    <h2>How a deal earns its badge</h2>
+    <ul class="verdict-list">
+      <li><span class="badge badge-low">NEW LOW</span> The lowest price the source has ever tracked for this product.</li>
+      <li><span class="badge badge-strong">STRONG DEAL</span> A big, genuine cut — usually 30% or more off the usual price.</li>
+      <li><span class="badge badge-good">GOOD PRICE</span> A solid saving, worth buying if you already wanted it.</li>
+      <li><span class="badge badge-routine">ROUTINE SALE</span> A small cut, or a price this product hits often. Not a reason to rush.</li>
+    </ul>
+    <p class="method">Method: each price was read on 27 Nov 2026 at the named store or in a deals roundup that names the store (9to5Toys, TechSpot, Mashable, Yahoo Shopping). The discount on every card is computed from the two prices shown, so the maths always adds up. Prices move fast on Black Friday — the store link on each card takes you to the product at that store to confirm before you buy.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>DealHound — an independent deal finder. Not affiliated with Amazon, Best Buy, Walmart, Target or Dell. Store names are used only to say where a price was seen.</p>
+  <p>All deals checked 27 Nov 2026. Prices may change at the store.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
